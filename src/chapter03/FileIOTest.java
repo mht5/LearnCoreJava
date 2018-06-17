@@ -1,10 +1,10 @@
 package chapter03;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Paths;
-import java.util.Scanner;
 
 /**
  * test File I/O
@@ -14,17 +14,24 @@ import java.util.Scanner;
 public class FileIOTest {
 	public static void main(String[] args) throws FileNotFoundException {
 		try {
-			Scanner in = new Scanner(Paths.get("README.md"), "UTF-8");
-			String file = System.getProperty("user.dir") + "\\resources\\output.txt";
-			PrintWriter out = new PrintWriter(file);
+//			使用Scanner读中文会有乱码
+//			Scanner in = new Scanner(Paths.get("README.md"), "UTF-8");
+			String resourcePath = System.getProperty("user.dir") + "\\resources";
+			BufferedReader bf = new BufferedReader(new FileReader(resourcePath + "\\题都城南庄.txt"));
+			PrintWriter out = new PrintWriter(resourcePath + "\\output.txt");
 			String line;
-			while (in.hasNext()) {
-				line = in.nextLine();
+			while ((line = bf.readLine()) != null) {
 				System.out.println(line);
 				out.println(line);
 			}
+//			while (in.hasNext()) {
+//				line = in.nextLine();
+//				System.out.println(line);
+//				out.println(line);
+//			}
 			out.close();
-			in.close();
+			bf.close();
+//			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
