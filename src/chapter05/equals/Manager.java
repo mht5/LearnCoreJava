@@ -22,6 +22,10 @@ public class Manager extends Employee {
 		this.bonus = bonus;
 	}
 	
+	public double getBonus() {
+		return bonus;
+	}
+
 	public boolean equals(Object otherObject) {
 		if (! super.equals(otherObject)) return false;
 		Manager other = (Manager) otherObject;
