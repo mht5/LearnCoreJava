@@ -160,7 +160,7 @@ public class InterruptibleSocketFrame extends JFrame {
 				try {
 					OutputStream outStream = incoming.getOutputStream();
 					PrintWriter out = new PrintWriter(new OutputStreamWriter(outStream, "UTF-8"), true);
-					while (counter < 100) {
+					while (counter < 20) {
 						counter++;
 						if (counter <= 10) {
 							out.println(counter);
