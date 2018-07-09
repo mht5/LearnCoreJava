@@ -14,9 +14,10 @@ public class DBUtil {
 	public static Connection getConnection() throws SQLException {
 		String driver = "com.mysql.cj.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/corejava";
-		System.setProperty("jdbc.drivers", driver);
 		String username = "root";
 		String password = "passw0rd";
+		
+		System.setProperty("jdbc.drivers", driver);
 		
 		return DriverManager.getConnection(url, username, password);
 	}
