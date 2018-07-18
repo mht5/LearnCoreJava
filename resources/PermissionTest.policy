@@ -1,0 +1,4 @@
+grant
+{
+   permission volume02.chapter09.permissions.WordCheckPermission "sex,drugs,C++", "avoid";
+};
