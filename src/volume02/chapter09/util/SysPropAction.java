@@ -1,4 +1,4 @@
-package volume02.chapter09.auth;
+package volume02.chapter09.util;
 
 import java.security.PrivilegedAction;
 

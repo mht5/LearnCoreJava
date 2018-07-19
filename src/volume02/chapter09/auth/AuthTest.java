@@ -6,6 +6,8 @@ import javax.security.auth.Subject;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
+import volume02.chapter09.util.SysPropAction;
+
 /**
  * authenticate a user via a custom loign and executes the SysPropAction with the user's privilege
  * @author mhts
